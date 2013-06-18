@@ -53,6 +53,16 @@
                             </div>
                         </div>
                         <br />
+						
+						<div class="Panel_1">
+                            <div class="titulo">
+                                PERSONAL
+                            </div>
+                            <div class="Cuerpo">
+                                <asp:HyperLink ID="HyperLink10" CssClass="MnLink" runat="server" NavigateUrl="~/Personal/Empleado/Listado.aspx">Empleado</asp:HyperLink>
+                                </div>
+                        </div>
+						
                         <br />
                        
                     </td>
