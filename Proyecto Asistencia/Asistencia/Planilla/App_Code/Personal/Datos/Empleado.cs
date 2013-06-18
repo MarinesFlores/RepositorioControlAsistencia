@@ -211,7 +211,90 @@ namespace Personal.Datos
 
         #region Metodos publicos
 
-        
+        public System.Int32 Insertar ()
+        {
+            if ( Conexion.Conexion.Ejecutar ( "insert into Empleado values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", ci, nombre, APaterno, AMaterno, fechaNac, Genero, estadoCivil, profesion, nacionalidad, telefono1, telefenoInterno, direccion, nroAsegurado, NUA, activo ) == 0 )
+                return -1;
+            System.Data.DataTable t = Conexion.Conexion.Obtener ( "select max(id) from Empleado" );
+            return System.Convert.ToInt32 ( t.Rows[0][0] );
+        }
+
+        public void Actualizar ()
+        {
+            Conexion.Conexion.Ejecutar ( "update Empleado set ci=?, nombre=?, APaterno=?, AMaterno=?, fechaNac=?, Genero=?, estadoCivil=?, profesion=?, nacionalidad=?, telefono1=?, telefenoInterno=?, direccion=?, nroAsegurado=?, NUA=?, activo=? where id=?", ci, nombre, APaterno, AMaterno, fechaNac, Genero, estadoCivil, profesion, nacionalidad, telefono1, telefenoInterno, direccion, nroAsegurado, NUA, activo, id );
+        }
+
+        public void Eliminar ()
+        {
+
+            Conexion.Conexion.Ejecutar ( "delete from empleado where id=?", id );
+        }
+
+        public System.Data.DataTable Listar ()
+        {
+            return Listar ( "" );
+        }
+
+        public System.Data.DataTable ListarActivos ()
+        {
+            return Listar ( "activo<>0" );
+        }
+
+        public System.Data.DataTable Listar ( string condicion, params object[] args )
+        {
+            string s = "select * from Empleado " + ( !string.IsNullOrEmpty ( condicion ) ? "where " + condicion : "" );
+            return Conexion.Conexion.Obtener ( s, args );
+        }
+
+        public System.Data.DataTable ListarE ( string condicion, params object[] args )
+        {
+            string s = "select id, ci, apaterno + ' ' + amaterno + ' ' + nombre as nombre from empleado" + ( !string.IsNullOrEmpty ( condicion ) ? "where " + condicion : "" );
+            return Conexion.Conexion.Obtener ( s, args );
+        }
+
+        public System.Data.DataRow Obtener ()
+        {
+            System.Data.DataTable t = Conexion.Conexion.Obtener ( "select * from Empleado where id=?", id );
+            if ( t.Rows.Count > 0 )
+            {
+                id = System.Convert.ToInt32 ( t.Rows[0][0] );
+                ci = System.Convert.ToString ( t.Rows[0][1] );
+                nombre = System.Convert.ToString ( t.Rows[0][2] );
+                APaterno = System.Convert.ToString ( t.Rows[0][3] );
+                AMaterno = System.Convert.ToString ( t.Rows[0][4] );
+                fechaNac = System.Convert.ToDateTime ( t.Rows[0][5] );
+                Genero = System.Convert.ToString ( t.Rows[0][6] );
+                estadoCivil = System.Convert.ToString ( t.Rows[0][7] );
+                profesion = System.Convert.ToString ( t.Rows[0][8] );
+                nacionalidad = System.Convert.ToString ( t.Rows[0][9] );
+                telefono1 = System.Convert.ToString ( t.Rows[0][10] );
+                telefenoInterno = System.Convert.ToString ( t.Rows[0][11] );
+                direccion = System.Convert.ToString ( t.Rows[0][12] );
+                nroAsegurado = System.Convert.ToString ( t.Rows[0][13] );
+                NUA = System.Convert.ToString ( t.Rows[0][14] );
+                activo = System.Convert.ToInt32 ( t.Rows[0][15] );
+                return t.Rows[0];
+            }
+            return null;
+        }
+
+        public System.Data.DataRow ObtenerDeContrato ( int idContrato )
+        {
+            System.Data.DataTable t = Conexion.Conexion.Obtener ( "select NEmpleado_.ci, NEmpleado_.nombre, NEmpleado_.APaterno, NEmpleado_.AMaterno from empleado NEmpleado_ inner join contrato DCronograma_ on DCronograma_.idEmpleado=NEmpleado_.id where DCronograma_.id=?", idContrato );
+            if ( t.Rows.Count > 0 )
+            {
+                ci = System.Convert.ToString ( t.Rows[0][0] );
+                nombre = System.Convert.ToString ( t.Rows[0][1] );
+                APaterno = System.Convert.ToString ( t.Rows[0][2] );
+                AMaterno = System.Convert.ToString ( t.Rows[0][3] );
+                return t.Rows[0];
+            }
+            return null;
+        }
+
+        #endregion
+
+    }
 
     }
 }
