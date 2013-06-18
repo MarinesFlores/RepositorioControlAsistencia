@@ -62,7 +62,8 @@
                             </div>
                             <div class="Cuerpo">
                                 <asp:HyperLink ID="HyperLink10" CssClass="MnLink" runat="server" NavigateUrl="~/Personal/Empleado/Listado.aspx">Empleado</asp:HyperLink>
-                                </div>
+								<asp:HyperLink ID="HyperLink13" CssClass="MnLink" runat="server" NavigateUrl="~/Personal/TipoContrato/Listado.aspx">Tipo de Contrato</asp:HyperLink>                               
+							   </div>
                         </div>
 						
                         <br />
