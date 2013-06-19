@@ -65,6 +65,8 @@
     <Compile Include="Adm.Master.designer.cs">
       <DependentUpon>Adm.Master</DependentUpon>
     </Compile>
+    <Compile Include="App_Code\Personal\Datos\Empleado.cs" />
+    <Compile Include="App_Code\Personal\Negocio\GEmpleado.cs" />
     <Compile Include="Asistencia\Cronograma\Formulario.aspx.cs">
       <DependentUpon>Formulario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -116,6 +118,8 @@
     <Content Include="imgs\search.png" />
     <Content Include="imgs\time.png" />
     <Content Include="imgs\user.png" />
+    <Content Include="Personal\Empleado\Formulario.aspx" />
+    <Content Include="Personal\Empleado\Listado.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -161,9 +165,25 @@
     <Compile Include="MPages\MPGeneral.Master.designer.cs">
       <DependentUpon>MPGeneral.Master</DependentUpon>
     </Compile>
+    <Compile Include="Personal\Empleado\Formulario.aspx.cs">
+      <DependentUpon>Formulario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personal\Empleado\Formulario.aspx.designer.cs">
+      <DependentUpon>Formulario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\Empleado\Listado.aspx.cs">
+      <DependentUpon>Listado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personal\Empleado\Listado.aspx.designer.cs">
+      <DependentUpon>Listado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Personal\Presentacion\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="MPages\MPGeneral.Master" />
   </ItemGroup>

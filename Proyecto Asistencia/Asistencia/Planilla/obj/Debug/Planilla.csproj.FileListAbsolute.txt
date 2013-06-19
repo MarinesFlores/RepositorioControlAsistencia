@@ -137,3 +137,8 @@ D:\Peinado\Proyecto\parte1\Planilla_Proy1\Planilla\bin\Planilla.pdb
 D:\Peinado\Proyecto\parte1\Planilla_Proy1\Planilla\obj\Debug\ResolveAssemblyReference.cache
 D:\Peinado\Proyecto\parte1\Planilla_Proy1\Planilla\obj\Debug\Planilla.dll
 D:\Peinado\Proyecto\parte1\Planilla_Proy1\Planilla\obj\Debug\Planilla.pdb
+D:\Users\Marines\Documents\ProyectoAsistencia\Proyecto Asistencia\Asistencia\Planilla\obj\Debug\ResolveAssemblyReference.cache
+D:\Users\Marines\Documents\ProyectoAsistencia\Proyecto Asistencia\Asistencia\Planilla\obj\Debug\Planilla.pdb
+D:\Users\Marines\Documents\ProyectoAsistencia\Proyecto Asistencia\Asistencia\Planilla\bin\Planilla.dll
+D:\Users\Marines\Documents\ProyectoAsistencia\Proyecto Asistencia\Asistencia\Planilla\bin\Planilla.pdb
+D:\Users\Marines\Documents\ProyectoAsistencia\Proyecto Asistencia\Asistencia\Planilla\obj\Debug\Planilla.dll
