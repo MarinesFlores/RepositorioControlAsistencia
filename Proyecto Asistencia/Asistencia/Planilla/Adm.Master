@@ -47,6 +47,8 @@
                             </div>
                             <div class="Cuerpo">
                                   
+								  <asp:HyperLink ID="HyperLink17" CssClass="MnLink" runat="server" NavigateUrl="~/Asistencia/RegistroAsistencia/Listado.aspx">Asistecia</asp:HyperLink>
+
                                   <asp:HyperLink ID="HyperLink7" CssClass="MnLink" runat="server" NavigateUrl="~/Asistencia/Cronograma/Listado.aspx">Cronogramas</asp:HyperLink>
                                   
                                   <asp:HyperLink ID="HyperLink4" CssClass="MnLink" runat="server" NavigateUrl="~/Asistencia/Turno/Listado.aspx">Turnos</asp:HyperLink>                         
