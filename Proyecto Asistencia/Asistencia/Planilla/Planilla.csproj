@@ -66,6 +66,7 @@
       <DependentUpon>Adm.Master</DependentUpon>
     </Compile>
     <Compile Include="App_Code\Asistencia\Datos\Asistencia.cs" />
+    <Compile Include="App_Code\Asistencia\Negocio\GAsistencia.cs" />
     <Compile Include="App_Code\Personal\Datos\Empleado.cs" />
     <Compile Include="App_Code\Personal\Negocio\GEmpleado.cs" />
     <Compile Include="Asistencia\Cronograma\Formulario.aspx.cs">
