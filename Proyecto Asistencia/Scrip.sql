@@ -101,3 +101,27 @@ create table adendas(
 );
 
 
+create table feriado(
+	id int identity(1,1) not null primary key,
+	descripcion varchar(150),
+	fecha datetime ,
+);
+
+create table sucursal(
+	id int identity(1,1) not null primary key,
+	descripcion varchar(150),
+	activo int
+);
+
+create table sucursalFeriado(
+	id int identity(1,1) not null primary key,
+	idSucursal int,
+	idFeriado int,
+	
+	foreign key(idSucursal) references sucursal(id),
+	foreign key(idFeriado) references feriado(id)
+);
+
+
+
+
