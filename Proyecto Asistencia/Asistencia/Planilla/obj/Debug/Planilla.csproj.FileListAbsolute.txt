@@ -142,3 +142,8 @@ D:\Users\Marines\Documents\ProyectoAsistencia\Proyecto Asistencia\Asistencia\Pla
 D:\Users\Marines\Documents\ProyectoAsistencia\Proyecto Asistencia\Asistencia\Planilla\bin\Planilla.dll
 D:\Users\Marines\Documents\ProyectoAsistencia\Proyecto Asistencia\Asistencia\Planilla\bin\Planilla.pdb
 D:\Users\Marines\Documents\ProyectoAsistencia\Proyecto Asistencia\Asistencia\Planilla\obj\Debug\Planilla.dll
+D:\Documentos\Proyecto Asistencia\Proyecto Asistencia\Asistencia\Planilla\bin\Planilla.dll
+D:\Documentos\Proyecto Asistencia\Proyecto Asistencia\Asistencia\Planilla\bin\Planilla.pdb
+D:\Documentos\Proyecto Asistencia\Proyecto Asistencia\Asistencia\Planilla\obj\Debug\ResolveAssemblyReference.cache
+D:\Documentos\Proyecto Asistencia\Proyecto Asistencia\Asistencia\Planilla\obj\Debug\Planilla.dll
+D:\Documentos\Proyecto Asistencia\Proyecto Asistencia\Asistencia\Planilla\obj\Debug\Planilla.pdb
