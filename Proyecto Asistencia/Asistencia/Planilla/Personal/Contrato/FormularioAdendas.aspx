@@ -20,16 +20,18 @@ MasterPageFile="~/Adm.Master" StylesheetTheme="Default"%>
                  </tr>
 
                  <tr>
-                    <td align="right" >
+                    <td align="right" colspan="2">
                         <asp:Label ID="Label3" runat="server" Text="Contrato"></asp:Label>
                     </td>
                     <td align="left" colspan="2">
                         <asp:TextBox ID="tcontrato" runat="server" Width="100px" ReadOnly="True"></asp:TextBox>
                     </td>
                 </tr>
+
+
                 
                 <tr>
-                    <td align="right" >
+                    <td align="right" colspan="2">
                         <asp:Label ID="Label1" runat="server" Text="Código" Visible="False"></asp:Label>
                     </td>
                     <td align="left" colspan="2">
@@ -40,7 +42,11 @@ MasterPageFile="~/Adm.Master" StylesheetTheme="Default"%>
 
 
                 <tr>
-                    <td  align="right">
+                   <%-- <td  align="right">
+                             &nbsp;</td>
+                    <td class="style1">
+                        &nbsp;</td>--%>
+                   <td  align="right">
                             <asp:Label ID="Label9" runat="server" Text="Tipo Contrato"></asp:Label>
                     </td>
                     <td>
@@ -57,14 +63,20 @@ MasterPageFile="~/Adm.Master" StylesheetTheme="Default"%>
                      <asp:DropDownList ID="cbCornograma" runat="server" Width="100px">
                             </asp:DropDownList>
                     </td>
-                   
+                   <td  align="right">
+                            <asp:Label ID="Label11" runat="server" Text="Sucursal"></asp:Label>
+                    </td>
+                    <td>
+                     <asp:DropDownList ID="cbSucusal" runat="server" Width="100px">
+                            </asp:DropDownList>
+                    </td>
                 </tr>
 
                 <tr>
-                    <td  align="right" >
+                    <td  align="right" colspan="2">
                         <asp:Label ID="Label2" runat="server" Text="Fecha"></asp:Label>
                     </td>
-                   <td align="left" style="width: 26px"colspan="2">
+                   <td align="left" style="width: 26px">
                         
                         <asp:TextBox ID="tFecha" runat="server" Width="100px" ReadOnly="False"></asp:TextBox>
                         <asp:CalendarExtender ID="tFecha_CalendarExtender" runat="server" 
@@ -76,10 +88,10 @@ MasterPageFile="~/Adm.Master" StylesheetTheme="Default"%>
                     </td>
                 </tr>
                   <tr>
-                    <td  align="right" >
+                    <td  align="right" colspan="2">
                         <asp:Label ID="Label7" runat="server" Text="FechaFin"></asp:Label>
                     </td>
-                   <td align="left" style="width: 26px"colspan="2">
+                   <td align="left" style="width: 26px">
                         <asp:TextBox ID="tFechaFin" runat="server" Width="100px"></asp:TextBox>
                         <asp:CalendarExtender ID="tFechaFin_CalendarExtender" runat="server" 
                             Format="dd/MM/yyyy" PopupButtonID="ibFF" PopupPosition="Right" 
@@ -91,7 +103,7 @@ MasterPageFile="~/Adm.Master" StylesheetTheme="Default"%>
                 </tr>
 
                 <tr>
-                    <td  align="right" >
+                    <td  align="right" colspan="2">
                         <asp:Label ID="Label4" runat="server" Text="Sueldo"></asp:Label>
                     </td>
                     <td  align="left" colspan="2">
@@ -102,7 +114,7 @@ MasterPageFile="~/Adm.Master" StylesheetTheme="Default"%>
                 </tr>
 
                 <tr>
-                    <td  align="right" >
+                    <td  align="right" colspan="2">
                         <asp:Label ID="Label8" runat="server" Text="Estado"></asp:Label>
                     </td>
                     <td  align="left" colspan="2">
@@ -168,6 +180,9 @@ MasterPageFile="~/Adm.Master" StylesheetTheme="Default"%>
                                     <ItemStyle HorizontalAlign="Center" />
                                     </asp:BoundField>
                                     <asp:BoundField DataField="Cronograma" HeaderText="Cronograma" >
+                                    <ItemStyle HorizontalAlign="Center" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="Sucursal" HeaderText="Sucursal" >
                                     <ItemStyle HorizontalAlign="Center" />
                                     </asp:BoundField>
                                    
