@@ -67,8 +67,12 @@
     </Compile>
     <Compile Include="App_Code\Asistencia\Datos\Asistencia.cs" />
     <Compile Include="App_Code\Asistencia\Negocio\GAsistencia.cs" />
+    <Compile Include="App_Code\Personal\Datos\Adenda.cs" />
+    <Compile Include="App_Code\Personal\Datos\Contrato.cs" />
     <Compile Include="App_Code\Personal\Datos\Empleado.cs" />
     <Compile Include="App_Code\Personal\Datos\TipoContrato.cs" />
+    <Compile Include="App_Code\Personal\Negocio\GAdenda.cs" />
+    <Compile Include="App_Code\Personal\Negocio\GContrato.cs" />
     <Compile Include="App_Code\Personal\Negocio\GEmpleado.cs" />
     <Compile Include="App_Code\Personal\Negocio\GTipoContrato.cs" />
     <Compile Include="Asistencia\Cronograma\Formulario.aspx.cs">
@@ -124,6 +128,9 @@
     <Content Include="imgs\search.png" />
     <Content Include="imgs\time.png" />
     <Content Include="imgs\user.png" />
+    <Content Include="Personal\Contrato\Formulario.aspx" />
+    <Content Include="Personal\Contrato\FormularioAdendas.aspx" />
+    <Content Include="Personal\Contrato\Listado.aspx" />
     <Content Include="Personal\Empleado\Formulario.aspx" />
     <Content Include="Personal\Empleado\Listado.aspx" />
     <Content Include="Personal\TipoContrato\Formulario.aspx" />
@@ -187,6 +194,27 @@
     <Compile Include="MPages\MPGeneral.Master.designer.cs">
       <DependentUpon>MPGeneral.Master</DependentUpon>
     </Compile>
+    <Compile Include="Personal\Contrato\Formulario.aspx.cs">
+      <DependentUpon>Formulario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personal\Contrato\Formulario.aspx.designer.cs">
+      <DependentUpon>Formulario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\Contrato\FormularioAdendas.aspx.cs">
+      <DependentUpon>FormularioAdendas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personal\Contrato\FormularioAdendas.aspx.designer.cs">
+      <DependentUpon>FormularioAdendas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\Contrato\Listado.aspx.cs">
+      <DependentUpon>Listado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personal\Contrato\Listado.aspx.designer.cs">
+      <DependentUpon>Listado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Personal\Empleado\Formulario.aspx.cs">
       <DependentUpon>Formulario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -203,12 +231,14 @@
     </Compile>
     <Compile Include="Personal\TipoContrato\Formulario.aspx.cs">
       <DependentUpon>Formulario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Personal\TipoContrato\Formulario.aspx.designer.cs">
       <DependentUpon>Formulario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Personal\TipoContrato\Listado.aspx.cs">
       <DependentUpon>Listado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Personal\TipoContrato\Listado.aspx.designer.cs">
       <DependentUpon>Listado.aspx</DependentUpon>

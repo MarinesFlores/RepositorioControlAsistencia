@@ -73,6 +73,31 @@ create table asistencia(
 	foreign key(idEmpleado) references empleado(id)
 );
 
+create table contrato(
+	id int 	identity(1,1) not null primary key,
+	fecha datetime,
+	fechaIni datetime,
+	vigente int,
+	idEmpleado int,
+	
+	foreign key(idEmpleado) references empleado(id)
+);
 
+
+create table adendas(
+	id int identity(1,1) not null primary key,
+	fechaFin datetime,
+	salario float, 
+	fecha datetime,
+	idContrato int,
+	idTipoContrato int,
+	idCronograma int, 
+	activo int,
+	
+	foreign key(idContrato) references contrato(id),
+	foreign key(idCronograma) references cronograma(id),
+	foreign key(idTipoCOntrato) references tipoContrato(id)
+
+);
 
 

@@ -3,7 +3,7 @@
     public class Conexion
     {
         private static System.Data.OleDb.OleDbConnection cnx;
-        private static string CadenaConexion = @"Provider=SQLoledb;Server=(local);Database=planilla;Integrated Security=SSPI";       
+        private static string CadenaConexion = @"Provider=SQLoledb;Server=KITTY\SQLSERVER2008;Database=planilla;Integrated Security=SSPI";       
         private static System.Data.OleDb.OleDbTransaction transaccion;
 
         private static void Conectar()
