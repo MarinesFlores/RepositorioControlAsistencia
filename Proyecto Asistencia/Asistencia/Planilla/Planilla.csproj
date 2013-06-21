@@ -66,14 +66,19 @@
       <DependentUpon>Adm.Master</DependentUpon>
     </Compile>
     <Compile Include="App_Code\Asistencia\Datos\Asistencia.cs" />
+    <Compile Include="App_Code\Asistencia\Datos\Feriado.cs" />
     <Compile Include="App_Code\Asistencia\Negocio\GAsistencia.cs" />
+    <Compile Include="App_Code\Asistencia\Negocio\GFeriado.cs" />
     <Compile Include="App_Code\Personal\Datos\Adenda.cs" />
     <Compile Include="App_Code\Personal\Datos\Contrato.cs" />
     <Compile Include="App_Code\Personal\Datos\Empleado.cs" />
+    <Compile Include="App_Code\Personal\Datos\Sucursal.cs" />
+    <Compile Include="App_Code\Personal\Datos\SucursalFeriado.cs" />
     <Compile Include="App_Code\Personal\Datos\TipoContrato.cs" />
     <Compile Include="App_Code\Personal\Negocio\GAdenda.cs" />
     <Compile Include="App_Code\Personal\Negocio\GContrato.cs" />
     <Compile Include="App_Code\Personal\Negocio\GEmpleado.cs" />
+    <Compile Include="App_Code\Personal\Negocio\GSucursal.cs" />
     <Compile Include="App_Code\Personal\Negocio\GTipoContrato.cs" />
     <Compile Include="Asistencia\Cronograma\Formulario.aspx.cs">
       <DependentUpon>Formulario.aspx</DependentUpon>
@@ -133,6 +138,8 @@
     <Content Include="Personal\Contrato\Listado.aspx" />
     <Content Include="Personal\Empleado\Formulario.aspx" />
     <Content Include="Personal\Empleado\Listado.aspx" />
+    <Content Include="Personal\Sucursal\Formulario.aspx" />
+    <Content Include="Personal\Sucursal\Listado.aspx" />
     <Content Include="Personal\TipoContrato\Formulario.aspx" />
     <Content Include="Personal\TipoContrato\Listado.aspx" />
     <Content Include="Web.config" />
@@ -227,6 +234,20 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Personal\Empleado\Listado.aspx.designer.cs">
+      <DependentUpon>Listado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\Sucursal\Formulario.aspx.cs">
+      <DependentUpon>Formulario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personal\Sucursal\Formulario.aspx.designer.cs">
+      <DependentUpon>Formulario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\Sucursal\Listado.aspx.cs">
+      <DependentUpon>Listado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personal\Sucursal\Listado.aspx.designer.cs">
       <DependentUpon>Listado.aspx</DependentUpon>
     </Compile>
     <Compile Include="Personal\TipoContrato\Formulario.aspx.cs">

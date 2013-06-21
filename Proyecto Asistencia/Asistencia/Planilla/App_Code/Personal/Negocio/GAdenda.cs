@@ -7,7 +7,6 @@ namespace Personal.Negocio
 {
     public class GAdenda
     {
-
         #region Variables privadas
 
         private Datos.Adenda DAdendas_;
@@ -16,7 +15,7 @@ namespace Personal.Negocio
 
         #region Metodos publicos
 
-        public System.Int32 Insertar ( System.DateTime fechaFin, System.Double salario, System.DateTime fecha, System.Int32 idContrato, System.Int32 idTipoContrato, System.Int32 idCronograma, System.Int32 activo )
+        public System.Int32 Insertar ( System.DateTime fechaFin, System.Double salario, System.DateTime fecha, System.Int32 idContrato, System.Int32 idTipoContrato, System.Int32 idCronograma, System.Int32 idSucursal, System.Int32 activo )
         {
             try
             {
@@ -27,8 +26,8 @@ namespace Personal.Negocio
                 DAdendas_.idContrato = idContrato;
                 DAdendas_.idTipoContrato = idTipoContrato;
                 DAdendas_.idCronograma = idCronograma;
+                DAdendas_.idSucursal = idSucursal;
                 DAdendas_.activo = activo;
-
                 int i = DAdendas_.Insertar ();
                 if ( i < 0 )
                     throw new System.Exception ( "Adendas: Error al insertar. \n" );
@@ -52,6 +51,7 @@ namespace Personal.Negocio
                 DAdendas_.idContrato = idContrato;
                 DAdendas_.idTipoContrato = idTipoContrato;
                 DAdendas_.idCronograma = idCronograma;
+                DAdendas_.idSucursal = idSucursal;
                 DAdendas_.activo = activo;
                 ;
                 DAdendas_.Actualizar ();

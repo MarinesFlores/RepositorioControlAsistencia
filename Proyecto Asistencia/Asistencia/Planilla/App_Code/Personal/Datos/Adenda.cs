@@ -8,6 +8,7 @@ namespace Personal.Datos
     public class Adenda
     {
 
+
         #region Variables privadas
 
         private System.Int32 id_;
@@ -15,9 +16,10 @@ namespace Personal.Datos
         private System.Double salario_;
         private System.DateTime fecha_;
         private System.Int32 idContrato_;
-       
+
         private System.Int32 idTipoContrato_;
         private System.Int32 idCronograma_;
+        private System.Int32 idSucursal_;
         private System.Int32 activo_;
 
         #endregion
@@ -79,7 +81,7 @@ namespace Personal.Datos
                 idContrato_ = value;
             }
         }
-       
+
         public System.Int32 idTipoContrato
         {
             get
@@ -102,7 +104,17 @@ namespace Personal.Datos
                 idCronograma_ = value;
             }
         }
-       
+        public System.Int32 idSucursal
+        {
+            get
+            {
+                return idSucursal_;
+            }
+            set
+            {
+                idSucursal_ = value;
+            }
+        }
         public System.Int32 activo
         {
             get
@@ -121,17 +133,17 @@ namespace Personal.Datos
 
         public System.Int32 Insertar ()
         {
-            if ( Conexion.Conexion.Ejecutar ( "insert into Adendas values(?, ?, ?, ?, ?, ?, ?)", fechaFin, salario, fecha, idContrato, idTipoContrato, idCronograma, activo ) == 0 )
+            if ( Conexion.Conexion.Ejecutar ( "insert into Adendas values(?, ?, ?, ?, ?, ?, ?, ?)", fechaFin, salario, fecha, idContrato, idTipoContrato, idCronograma, idSucursal, activo ) == 0 )
                 return -1;
             System.Data.DataTable t = Conexion.Conexion.Obtener ( "select max(id) from Adendas" );
-            Conexion.Conexion.Ejecutar ( "update Adendas set activo=0 where id<>? and  idContrato=?", System.Convert.ToInt32 ( t.Rows[0][0] ),idContrato );
+            Conexion.Conexion.Ejecutar ( "update Adendas set activo=0 where id<>? and  idContrato=?", System.Convert.ToInt32 ( t.Rows[0][0] ), idContrato );
 
             return System.Convert.ToInt32 ( t.Rows[0][0] );
         }
 
         public void Actualizar ()
         {
-            Conexion.Conexion.Ejecutar ( "update Adendas set fechaFin=?, salario=?, fecha=?, idContrato=?, idTipoContrato=?, idCronograma=?, activo=? where id=?", fechaFin, salario, fecha, idContrato, idTipoContrato, idCronograma,  activo, id );
+            Conexion.Conexion.Ejecutar ( "update Adendas set fechaFin=?, salario=?, fecha=?, idContrato=?, idTipoContrato=?, idCronograma=?, idSucursal=?, activo=? where id=?", fechaFin, salario, fecha, idContrato, idTipoContrato, idCronograma, idSucursal, activo, id );
         }
 
         public void Eliminar ()
@@ -162,7 +174,8 @@ namespace Personal.Datos
                 idContrato = System.Convert.ToInt32 ( t.Rows[0][4] );
                 idTipoContrato = System.Convert.ToInt32 ( t.Rows[0][5] );
                 idCronograma = System.Convert.ToInt32 ( t.Rows[0][6] );
-                activo = System.Convert.ToInt32 ( t.Rows[0][7] );
+                idSucursal = System.Convert.ToInt32 ( t.Rows[0][7] );
+                activo = System.Convert.ToInt32 ( t.Rows[0][8] );
                 return t.Rows[0];
             }
             return null;
@@ -172,7 +185,7 @@ namespace Personal.Datos
 
         public System.Data.DataTable ListarDeAdendas ( int idContrato )
         {
-            string s = "select DAsistencia_.*, NTipoContrato_.descripcion as tipoContrato,  NCronograma_.descripcion as cronograma from adendas DAsistencia_, tipoContrato NTipoContrato_, cronograma NCronograma_ where DAsistencia_.idTipoContrato=NTipoContrato_.id  and NCronograma_.id= DAsistencia_.idCronograma and DAsistencia_.idContrato=? ";
+            string s = "select DAsistencia_.*, NTipoContrato_.descripcion as tipoContrato, DSucursal_.descripcion as sucursal, NCronograma_.descripcion as cronograma from adendas DAsistencia_, tipoContrato NTipoContrato_, sucursal DSucursal_, cronograma NCronograma_ where DAsistencia_.idTipoContrato=NTipoContrato_.id and DAsistencia_.idSucursal=DSucursal_.id and NCronograma_.id= DAsistencia_.idCronograma and DAsistencia_.idContrato=? ";
             return Conexion.Conexion.Obtener ( s, idContrato );
         }
 
