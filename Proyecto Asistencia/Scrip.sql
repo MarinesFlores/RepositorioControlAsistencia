@@ -84,6 +84,30 @@ create table contrato(
 );
 
 
+create table feriado(
+	id int identity(1,1) not null primary key,
+	descripcion varchar(150),
+	fecha datetime ,
+);
+
+create table sucursal(
+	id int identity(1,1) not null primary key,
+	descripcion varchar(150),
+	activo int
+);
+
+create table sucursalFeriado(
+	id int identity(1,1) not null primary key,
+	idSucursal int,
+	idFeriado int,
+	
+	foreign key(idSucursal) references sucursal(id),
+	foreign key(idFeriado) references feriado(id)
+);
+
+
+
+
 create table adendas(
 	id int identity(1,1) not null primary key,
 	fechaFin datetime,
@@ -92,12 +116,17 @@ create table adendas(
 	idContrato int,
 	idTipoContrato int,
 	idCronograma int, 
+	idSucursal int,	
 	activo int,
 	
 	foreign key(idContrato) references contrato(id),
 	foreign key(idCronograma) references cronograma(id),
-	foreign key(idTipoCOntrato) references tipoContrato(id)
-
+	foreign key(idTipoCOntrato) references tipoContrato(id),
+	foreign key(idSucursal) references sucursal(id)
 );
+
+
+
+
 
 

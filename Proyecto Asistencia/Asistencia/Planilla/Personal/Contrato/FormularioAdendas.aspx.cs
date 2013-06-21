@@ -17,7 +17,7 @@ namespace Personal.Presentacion.Contrato
       //  private Personal.Negocio.GCargo NCargo_ = new Personal.Negocio.GCargo ();
         private Personal.Negocio.GTipoContrato NTipoContrato_ = new Personal.Negocio.GTipoContrato ();
         private Asistencia.Negocio.Cronograma NCronograma_ = new Asistencia.Negocio.Cronograma ();
-        //private Personal.Negocio.GSucursal NSucusal_ = new Personal.Negocio.GSucursal ();
+        private Personal.Negocio.GSucursal NSucusal_ = new Personal.Negocio.GSucursal ();
 
         private Personal.Negocio.GAdenda NAdendas_ = new Personal.Negocio.GAdenda ();
 
@@ -67,7 +67,7 @@ namespace Personal.Presentacion.Contrato
                 int s = 0;
                 if ( chActivo.Checked )
                     s = 1;
-                int id = NAdendas_.Insertar ( DateTime.Parse ( tFechaFin.Text ), double.Parse ( tsaldo.Text ), DateTime.Parse ( tFecha.Text ), int.Parse ( tcontrato.Text ),int.Parse ( cbTContrato.SelectedValue ), int.Parse ( cbCornograma.SelectedValue ),  s );
+                int id = NAdendas_.Insertar ( DateTime.Parse ( tFechaFin.Text ), double.Parse ( tsaldo.Text ), DateTime.Parse ( tFecha.Text ), int.Parse ( tcontrato.Text ),int.Parse ( cbTContrato.SelectedValue ), int.Parse ( cbCornograma.SelectedValue ), int.Parse ( cbSucusal.SelectedValue ), s );
 
 
                 //como deberia de ir
@@ -147,10 +147,10 @@ namespace Personal.Presentacion.Contrato
 
         private void CargarSucursal ()
         {
-            //cbSucusal.DataSource = NSucusal_.ListarActivo ();
-            //cbSucusal.DataValueField = "id";
-            //cbSucusal.DataTextField = "descripcion";
-            //cbSucusal.DataBind ();
+            cbSucusal.DataSource = NSucusal_.ListarActivo ();
+            cbSucusal.DataValueField = "id";
+            cbSucusal.DataTextField = "descripcion";
+            cbSucusal.DataBind ();
         }
 
 
